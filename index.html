@@ -1,1 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Training on Cyber Security for Networking Professionals</title>
+    <style>
+        :root {
+            --primary: #F28C28;
+            --secondary: #E88C2D;
+            --body: #FCF5EC;
+            --text: #1D1D1B;
+            --secondary-dark: #9F4B14;
+        }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--body);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 2rem 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .hero-content {
+            text-align: center;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero-content p {
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .badge {
+            background-color: var(--secondary-dark);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        /* Logos Section */
+        .logos-section {
+            background: white;
+            padding: 3rem 0;
+            border-bottom: 3px solid var(--primary);
+        }
+
+        .logos-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .logo-item {
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        .logo-item:hover {
+            transform: translateY(-5px);
+            filter: drop-shadow(0 5px 15px rgba(242, 140, 40, 0.3));
+        }
+
+        .logo-item img {
+            height: 80px;
+            width: auto;
+            max-width: 200px;
+            object-fit: contain;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 4rem 0;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            border-left: 4px solid var(--primary);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .card h3 {
+            color: var(--secondary-dark);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+
+        .card p {
+            margin-bottom: 1rem;
+        }
+
+        .card ul {
+            margin-left: 1.5rem;
+        }
+
+        .card li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            color: white;
+            padding: 4rem 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .stat-item p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Future Directions */
+        .future-section {
+            background: var(--body);
+            padding: 4rem 0;
+        }
+
+        .future-section h2 {
+            text-align: center;
+            color: var(--secondary-dark);
+            margin-bottom: 2rem;
+            font-size: 2.2rem;
+        }
+
+        .future-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .future-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border-top: 3px solid var(--primary);
+        }
+
+        .future-item h4 {
+            color: var(--secondary-dark);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-dark);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .logos-container {
+                gap: 2rem;
+            }
+            
+            .logo-item img {
+                height: 60px;
+            }
+            
+            .card {
+                padding: 1.5rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .stat-item h3 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .logos-container {
+                gap: 1.5rem;
+            }
+            
+            .logo-item img {
+                height: 50px;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animations */
+        .card, .future-item, .logo-item {
+            animation: fadeInUp 0.6s ease forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .card:nth-child(1) { animation-delay: 0.1s; }
+        .card:nth-child(2) { animation-delay: 0.2s; }
+        .card:nth-child(3) { animation-delay: 0.3s; }
+        .card:nth-child(4) { animation-delay: 0.4s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="hero-content">
+                <div class="badge">WP2 • 3rd Call Project</div>
+                <h1>Training on Cyber Security for Networking Professionals</h1>
+                <p>Strengthening digital defense capabilities across educational and research institutions in Bangladesh and the Asia-Pacific region</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Logos Section -->
+    <section class="logos-section">
+        <div class="container">
+            <div class="logos-container">
+                <div class="logo-item">
+                    <img src="images/logos/tein-logo.png" alt="TEIN Cooperation Center" />
+                </div>
+                <div class="logo-item">
+                    <img src="images/logos/asia-connect-logo.png" alt="Asi@Connect" />
+                </div>
+                <div class="logo-item">
+                    <img src="images/logos/eu-logo.png" alt="European Union" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="main-content">
+        <div class="container">
+            <div class="content-grid">
+                <div class="card">
+                    <h3>Project Overview</h3>
+                    <p>Addressing growing cybersecurity vulnerabilities in the NREN ecosystem through comprehensive training focused on ISO standards, firewall systems, and threat response mechanisms.</p>
+                    <p>Led by Jashore University of Science and Technology (JUST) in collaboration with BdREN, this initiative builds essential cybersecurity capacity for technical staff across educational institutions.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Key Training Areas</h3>
+                    <ul>
+                        <li>ISO 27001/27002 standards implementation</li>
+                        <li>FortiGate firewall configuration and management</li>
+                        <li>Policy-based traffic shaping techniques</li>
+                        <li>Rogue device detection and mitigation</li>
+                        <li>VAPT (Vulnerability Assessment and Penetration Testing)</li>
+                        <li>SOC simulation and real-world scenarios</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>Partner Organizations</h3>
+                    <p><strong>Lead Institution:</strong> Jashore University of Science and Technology (JUST)</p>
+                    <p><strong>Collaborating Partners:</strong></p>
+                    <ul>
+                        <li>BdREN (Bangladesh Research and Education Network)</li>
+                        <li>Internet Society Bangladesh Chapter</li>
+                        <li>PSTU (Patuakhali Science and Technology University)</li>
+                        <li>Fortinet Bangladesh</li>
+                        <li>Spider Digital Security</li>
+                        <li>PrimeNet Limited</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>Technical Highlights</h3>
+                    <p>The 4-day intensive workshop at Sheikh Hasina Software Technology Park covered:</p>
+                    <ul>
+                        <li>Fortinet SD-WAN configuration and optimization</li>
+                        <li>SSL Deep Packet Inspection (DPI) implementation</li>
+                        <li>IPSec tunneling for secure communications</li>
+                        <li>Policy-based routing strategies</li>
+                        <li>Hands-on SOC (Security Operations Center) simulations</li>
+                        <li>Practical cybersecurity incident response</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>32</h3>
+                    <p>Participants Trained</p>
+                </div>
+                <div class="stat-item">
+                    <h3>3</h3>
+                    <p>Women Participants</p>
+                </div>
+                <div class="stat-item">
+                    <h3>6</h3>
+                    <p>Partner Organizations</p>
+                </div>
+                <div class="stat-item">
+                    <h3>4</h3>
+                    <p>Days of Training</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Future Directions -->
+    <section class="future-section">
+        <div class="container">
+            <h2>Future Directions & Impact</h2>
+            <div class="future-grid">
+                <div class="future-item">
+                    <h4>Regional Expansion</h4>
+                    <p>Virtual training sessions planned for NREN staff in Bhutan, Nepal, Laos, Cambodia, and Sri Lanka</p>
+                </div>
+                <div class="future-item">
+                    <h4>Curriculum Integration</h4>
+                    <p>Institutionalizing training modules as part of university cybersecurity curricula</p>
+                </div>
+                <div class="future-item">
+                    <h4>SOC Establishment</h4>
+                    <p>Supporting universities in establishing Security Operations Centers with industry partnerships</p>
+                </div>
+                <div class="future-item">
+                    <h4>Student Opportunities</h4>
+                    <p>Creating internship opportunities for ICT students through strengthened institutional infrastructure</p>
+                </div>
+            </div>
+
+            <div class="card" style="margin-top: 3rem;">
+                <h3>Sustainable Development Goals Alignment</h3>
+                <p>This project directly contributes to multiple UN Sustainable Development Goals:</p>
+                <ul>
+                    <li><strong>SDG 4 (Quality Education):</strong> Professional development and capacity building for technical staff</li>
+                    <li><strong>SDG 9 (Industry, Innovation, and Infrastructure):</strong> Strengthening institutional cybersecurity infrastructure</li>
+                    <li><strong>SDG 16 (Peace, Justice, and Strong Institutions):</strong> Building cyber resilience in public education systems</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Training on Cyber Security for Networking Professionals</p>
+            <p>A collaborative initiative under the Asi@Connect program, supported by the European Union</p>
+        </div>
+    </footer>
+</body>
+</html>
